@@ -2,7 +2,7 @@ apiVersion: v2
 name: rustdesk-server
 description: A Helm chart for deploying RustDesk self-hosted server on Kubernetes with arm64 support and Bitwarden Secrets Manager integration
 type: application
-version: 1.0.1
+version: 1.0.2
 appVersion: "latest"
 keywords:
   - rustdesk
@@ -35,6 +35,8 @@ annotations:
     - name: Quick Start Guide
       url: https://github.com/sachajw/orc-k8s-helm-rustdesk/blob/main/charts/rustdesk-server/QUICKSTART.md
   artifacthub.io/changes: |
+    - kind: fixed
+      description: Key extraction job now uses busybox image instead of RustDesk image to avoid missing shell error
     - kind: added
       description: Initial release with RustDesk server support
     - kind: added
